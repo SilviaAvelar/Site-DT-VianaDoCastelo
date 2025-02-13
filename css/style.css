@@ -1,0 +1,3013 @@
+/* ========================= Geral ========================= */
+:root {
+    /* Cores */
+    --primary-color: #79d7be; /* Cor primária (verde) */
+    --secondary-color: #b2c8ba; /* Cor secundária (verde claro) */
+    --accent-color: #5cb85c;    /* Cor de destaque (verde mais escuro) */
+    --text-color: #333;       /* Cor do texto principal */
+    --light-text-color: #666;  /* Cor do texto secundário */
+    --white-color: #fff;       /* Branco */
+    --light-bg-color: #f4f4f4;  /* Fundo claro */
+    --footer-bg-color: rgb(38, 73, 52); /* Fundo do footer */
+
+    /* Fontes */
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --default-font: Arial, sans-serif;
+
+    /* Sombras */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Bordas */
+    --border-radius: 8px;
+
+    /* Transições */
+    --transition-default: all 0.3s ease;
+}
+
+body {
+    font-family: var(--default-font);
+    margin: 0;
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color); /* Usando variável */
+}
+
+/* ========================= Header ========================= */
+nav {
+    color: var(--white-color);
+    height: auto;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent; /* Inicialmente transparente */
+    transition: background-color 0.3s ease;
+}
+
+.nav-opaque {
+    background-color: rgba(121, 215, 190, 0.9) !important; /* Cor totalmente opaca */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+nav .logo a {
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+/* Menu Hambúrguer (adicionado) */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 1.5em;
+}
+
+nav .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+}
+
+nav .menu li {
+    margin-left: 15px;
+}
+
+nav .menu li a {
+    color: var(--white-color);
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+nav .menu li a:hover {
+    background-color: #888888;
+}
+
+/* Media Query para Menu Hambúrguer */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-color);
+        text-align: center;
+    }
+
+    nav .menu.active {
+        display: flex; /* Mostra o menu quando a classe 'active' é adicionada */
+    }
+
+    nav .menu li {
+        margin: 10px 0;
+    }
+}
+
+/* ========================= Dropdown Menu ========================= */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* ========================= Parallax ========================= */
+#parallax-container {
+    position: relative;
+    height: 1500px;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/biblia.jpg') no-repeat center top; /* Overlay e imagem */
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: zoomInOut 4s infinite alternate ease-in-out;
+    transform-origin: center;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    color: rgb(211, 198, 198);
+    padding: 10px;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+}
+
+.text-container h1 {
+    font-size: 3em;
+    margin-bottom: -20px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-imagem {
+    height: 230px;
+    width: auto;
+    position: relative;
+    margin-left: 0;
+}
+
+/* ========================= Sobre Nós Home ========================= */
+#sobre-nos {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+#sobre-nos h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#sobre-nos p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 0 50px;
+    text-indent: 30px;
+}
+
+/* ========================= Sobre a Igreja ========================= */
+.sobre-igreja {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.sobre-igreja h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-igreja h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+}
+
+.sobre-igreja p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.secao-destaque {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.secao-destaque:hover {
+    transform: translateY(-5px); /* Eleva um pouco a seção no hover */
+}
+
+.secao-valores {
+    margin-bottom: 30px;
+}
+
+.valores-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.valores-lista li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.valores-lista li i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--accent-color); /* Usando variável */
+}
+
+.equipe-pastoral-imagem {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius); /* Usando variável */
+    margin-top: 20px;
+    box-shadow: var(--box-shadow); /* Usando variável */
+}
+
+/* ========================= Sobre os Pastores ========================= */
+.sobre-pastores {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.sobre-pastores h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pastores-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os pastores em telas maiores */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.pastor {
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e informações em coluna */
+    align-items: center;
+    width: 100%; /* Ocupa toda a largura em telas menores */
+    max-width: 400px; /* Limita a largura em telas maiores */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius); /* Usando variável */
+    overflow: hidden;
+    box-shadow: var(--box-shadow); /* Usando variável */
+    transition: transform 0.3s ease;
+}
+
+.pastor:hover {
+    transform: translateY(-5px);
+}
+
+.pastor-imagem, .pastora-imagem {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.pastor-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.pastor-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.pastor-info p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.pastor-info i {
+    color: var(--accent-color); /* Usando variável */
+    margin-right: 5px;
+}
+
+.familia-pastoral {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.familia-pastoral h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+}
+
+.familia-imagem {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius); /* Usando variável */
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow); /* Usando variável */
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    .pastores-content {
+        justify-content: space-around; /* Espalha os pastores em telas maiores */
+    }
+
+    .pastor {
+        width: calc(50% - 30px); /* Divide em duas colunas em telas médias */
+    }
+}
+
+@media (min-width: 992px) {
+    .pastor {
+        width: calc(33% - 30px); /* Divide em três colunas em telas grandes, se houver mais pastores */
+    }
+}
+
+/* ========================= Missão ========================= */
+.missao-container {
+    padding: 50px 0;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.missao-container h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.missao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.missao-imagem-container {
+    flex: 1 1 300px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.missao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius); /* Usando variável */
+    box-shadow: var(--box-shadow); /* Usando variável */
+    transition: transform 0.3s ease;
+}
+
+.missao-imagem:hover {
+    transform: scale(1.05);
+}
+
+.missao-texto {
+    flex: 2 1 400px;
+}
+
+.missao-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color); /* Usando variável */
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.missao-texto h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color); /* Usando variável */
+}
+
+.missao-texto h3 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.valores-lista,
+.cumprimos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.valores-lista li,
+.cumprimos-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.valores-lista li i,
+.cumprimos-lista li i {
+    color: var(--accent-color); /* Usando variável */
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.cumprimos-lista li {
+    transition: transform 0.3s ease;
+}
+
+.cumprimos-lista li:hover {
+    transform: translateX(5px);
+}
+
+.call-to-action {
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.call-to-action a {
+    color: var(--accent-color); /* Usando variável */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.call-to-action a:hover {
+    color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .missao-content {
+        flex-direction: column;
+    }
+
+    .missao-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Ministério de Louvor ========================= */
+.ministerio-louvor {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.ministerio-louvor h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ministerio-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.ministerio-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.ministerio-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto; /* Ajuste automático da altura */
+}
+
+.ministerio-imagem:hover {
+    transform: scale(1.05);
+}
+
+.ministerio-texto {
+    flex: 2 1 400px;
+}
+
+.ministerio-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ministerio-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de inscrição */
+.btn-inscricao {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inscricao:hover {
+    background-color: #449d44; /* Ajuste a cor de hover */
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .ministerio-content {
+        flex-direction: column;
+    }
+
+    .ministerio-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Apoio ao Culto ========================= */
+.apoio-culto {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.apoio-culto h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.apoio-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.apoio-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.apoio-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto; /* Ajuste automático da altura */
+}
+
+.apoio-imagem:hover {
+    transform: scale(1.05);
+}
+
+.apoio-texto {
+    flex: 2 1 400px;
+}
+
+.apoio-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.apoio-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.btn-inscricao {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inscricao:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .apoio-content {
+        flex-direction: column;
+    }
+
+    .apoio-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Comunicação ========================= */
+.comunicacao {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.comunicacao h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.comunicacao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.comunicacao-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.comunicacao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto; /* Ajuste automático da altura */
+}
+
+.comunicacao-imagem:hover {
+    transform: scale(1.05);
+}
+
+.comunicacao-texto {
+    flex: 2 1 400px;
+}
+
+.comunicacao-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.comunicacao-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de inscrição */
+.btn-inscricao {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inscricao:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .comunicacao-content {
+        flex-direction: column;
+    }
+
+    .comunicacao-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Ministério Infantil ========================= */
+.ministerio-infantil {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.ministerio-infantil h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Vermelho (ou Azul Pastel ou Rosa Vibrante) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ministerio-infantil-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.ministerio-infantil-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.ministerio-infantil-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.ministerio-infantil-imagem:hover {
+    transform: scale(1.05);
+}
+
+.ministerio-infantil-texto {
+    flex: 2 1 400px;
+}
+
+.ministerio-infantil-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Vermelho (ou Azul Pastel ou Rosa Vibrante) */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ministerio-infantil-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Verde (ou Verde Pastel ou Amarelo Vibrante) */
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de inscrição */
+.btn-inscricao {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Verde (ou Verde Pastel ou Amarelo Vibrante) */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-inscricao:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .ministerio-infantil-content {
+        flex-direction: column;
+    }
+
+    .ministerio-infantil-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* Estilos de Cores para o Ministério Infantil (Opção 1 - Arco-Íris) */
+.ministerio-infantil {
+    --primary-color: #F44336;   /* Vermelho */
+    --secondary-color: #FFEB3B;  /* Amarelo */
+    --accent-color: #4CAF50;    /* Verde */
+    --light-bg-color: #FFCDD2;  /* Rosa claro */
+}
+
+.ministerio-infantil h1 {
+    color: var(--primary-color);
+}
+
+.ministerio-infantil-texto h2 {
+    color: var(--primary-color);
+}
+
+.ministerio-infantil-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Verde (ou Verde Pastel ou Amarelo Vibrante) */
+}
+
+.ministerio-infantil-content {
+    background-color: var(--light-bg-color); /* Rosa claro (ou Amarelo Claro ou Rosa bem claro) */
+}
+
+/* ========================= Cá Fé ========================= */
+.cafe-com-fe {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+/* Estilos de Cores para o Cá Fé (Opção 1 - Tons Terrosos) */
+.cafe-com-fe {
+    --primary-color: #795548;    /* Marrom */
+    --secondary-color: #A1887F;   /* Marrom claro */
+    --accent-color: #FFC107;     /* Amarelo dourado */
+    --light-bg-color: #EFEBE9;    /* Bege claro */
+}
+
+.cafe-com-fe h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Marrom (ou Laranja Queimado ou Marrom Escuro) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cafe-com-fe-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--light-bg-color); /* Bege claro (ou Bege bem claro ou Branco acinzentado) */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.cafe-com-fe-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cafe-com-fe-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.cafe-com-fe-imagem:hover {
+    transform: scale(1.05);
+}
+
+.cafe-com-fe-texto {
+    flex: 2 1 400px;
+}
+
+.cafe-com-fe-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Marrom (ou Laranja Queimado ou Marrom Escuro) */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cafe-com-fe-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Amarelo dourado (ou Verde ou Marrom médio) */
+}
+
+.produtos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.produtos-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.produtos-lista li:hover {
+    transform: translateX(5px);
+}
+
+.produtos-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.btn-visite {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-visite:hover {
+    background-color: var(--accent-color); /* Amarelo dourado (ou Verde ou Marrom médio) */
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Produtos */
+.galeria-produtos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-produtos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .cafe-com-fe-content {
+        flex-direction: column;
+    }
+
+    .cafe-com-fe-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Adolescentes ========================= */
+.adolescentes {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+/* Estilos de Cores para Adolescentes */
+.adolescentes {
+    --primary-color: #29ABE2;  /* Azul Neon */
+    --secondary-color: #BBDEFB; /* Azul Mais Claro */
+    --accent-color: #FF69B4;   /* Rosa Choque */
+    --light-text-color: #757575;
+}
+
+.adolescentes h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Azul Neon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.adolescentes-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--secondary-color); /* Azul Mais Claro */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.adolescentes-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.adolescentes-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.adolescentes-imagem:hover {
+    transform: scale(1.05);
+}
+
+.adolescentes-texto {
+    flex: 2 1 400px;
+}
+
+.adolescentes-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Azul Neon */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.adolescentes-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-participe {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Rosa Choque */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-participe:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Fotos */
+.galeria-fotos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-fotos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .adolescentes-content {
+        flex-direction: column;
+    }
+
+    .adolescentes-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Jovens ========================= */
+.jovens {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+/* Estilos de Cores para Jovens */
+.jovens {
+    --primary-color: #FF9800;   /* Laranja */
+    --secondary-color: #FFE0B2;  /* Laranja Mais Claro */
+    --accent-color: #2ECC71;    /* Verde Esmeralda */
+    --light-text-color: #757575;
+}
+
+.jovens h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Laranja */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.jovens-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--secondary-color); /* Laranja Mais Claro */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.jovens-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.jovens-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.jovens-imagem:hover {
+    transform: scale(1.05);
+}
+
+.jovens-texto {
+    flex: 2 1 400px;
+}
+
+.jovens-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Laranja */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.jovens-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-junte-se {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Verde Esmeralda */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-junte-se:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Testemunhos */
+.testemunhos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.testemunhos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.testemunhos-slider {
+    /* Adicionar estilos para o slider */
+    display: flex;
+    overflow-x: auto; /* Habilita a barra de rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Define o comportamento de "snap" para o rolamento */
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não cobrir o texto */
+}
+
+.testemunho {
+    flex: 0 0 80%; /* Cada testemunho ocupa 80% da largura do contêiner */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-right: 20px; /* Espaço entre os testemunhos */
+    scroll-snap-align: start; /* Alinha o início de cada item ao contêiner */
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.testemunho p {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .jovens-content {
+        flex-direction: column;
+    }
+
+    .jovens-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Jovens Casados / Ministério de Casais ========================= */
+.jovens-casados {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.jovens-casados h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 5px; /* Reduz o espaço abaixo do título principal */
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Subtítulo */
+.jovens-casados .subtitle {
+    font-size: 1.2em;
+    text-align: center;
+    color: var(--light-text-color); /* Cor mais suave */
+    margin-bottom: 30px; /* Adiciona espaço abaixo do subtítulo */
+}
+
+.jovens-casados-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.jovens-casados-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.jovens-casados-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.jovens-casados-imagem:hover {
+    transform: scale(1.05);
+}
+
+.jovens-casados-texto {
+    flex: 2 1 400px;
+}
+
+.jovens-casados-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.jovens-casados-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-participe {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-participe:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Depoimentos */
+.depoimentos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.depoimentos-slider {
+    /* Adicionar estilos para o slider */
+    display: flex;
+    overflow-x: auto; /* Habilita a barra de rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Define o comportamento de "snap" para o rolamento */
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não cobrir o texto */
+}
+
+.depoimento {
+    flex: 0 0 80%; /* Cada depoimento ocupa 80% da largura do contêiner */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-right: 20px; /* Espaço entre os depoimentos */
+    scroll-snap-align: start; /* Alinha o início de cada item ao contêiner */
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.depoimento p {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .jovens-casados-content {
+        flex-direction: column;
+    }
+
+    .jovens-casados-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Mulheres ========================= */
+.mulheres {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.mulheres {
+    --primary-color: #B76E79;    
+    --secondary-color: #F5E7E2;   
+    --accent-color: #D8BFD8;     
+    --light-bg-color: #FAF0E6;   
+}
+
+.mulheres h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Rosa Vibrante (ou Rosé Gold ou Rosa Pastel) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mulheres-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--light-bg-color); /* Lilás Claro (ou Creme ou Amarelo Claro) */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.mulheres-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.mulheres-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.mulheres-imagem:hover {
+    transform: scale(1.05);
+}
+
+.mulheres-texto {
+    flex: 2 1 400px;
+}
+
+.mulheres-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Rosa Vibrante (ou Rosé Gold ou Rosa Pastel) */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mulheres-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Roxo (ou Lilás Acinzentado ou Lilás Pastel) */
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-junte-se {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Roxo (ou Lilás Acinzentado ou Lilás Pastel) */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-junte-se:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Eventos */
+.galeria-eventos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-eventos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .mulheres-content {
+        flex-direction: column;
+    }
+
+    .mulheres-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Aviva Viana ========================= */
+.aviva-viana {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.aviva-viana h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.aviva-viana-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.aviva-viana-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.aviva-viana-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.aviva-viana-imagem:hover {
+    transform: scale(1.05);
+}
+
+.aviva-viana-texto {
+    flex: 2 1 400px;
+}
+
+.aviva-viana-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.aviva-viana-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-participe {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-participe:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Depoimentos */
+.depoimentos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.depoimentos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.depoimentos-slider {
+    /* Adicionar estilos para o slider */
+    display: flex;
+    overflow-x: auto; /* Habilita a barra de rolagem horizontal */
+    scroll-snap-type: x mandatory; /* Define o comportamento de "snap" para o rolamento */
+    padding-bottom: 15px; /* Espaço para a barra de rolagem não cobrir o texto */
+}
+
+.depoimento {
+    flex: 0 0 80%; /* Cada depoimento ocupa 80% da largura do contêiner */
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-right: 20px; /* Espaço entre os testemunhos */
+    scroll-snap-align: start; /* Alinha o início de cada item ao contêiner */
+    background-color: #f9f9f9;
+    text-align: left;
+}
+
+.depoimento p {
+    font-style: italic;
+    font-size: 1.1em;
+    color: var(--light-text-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .aviva-viana-content {
+        flex-direction: column;
+    }
+
+    .aviva-viana-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Programação (Estilo Consistente) ========================= */
+.programacao {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.programacao h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.programacao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.programacao-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.programacao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.programacao-imagem:hover {
+    transform: scale(1.05);
+}
+
+.programacao-texto {
+    flex: 2 1 400px;
+}
+
+.programacao-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.programacao-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Estilo da Tabela */
+.programacao-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: var(--default-font);
+}
+
+.programacao-tabela thead {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: left;
+}
+
+.programacao-tabela th,
+.programacao-tabela td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.programacao-tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo da Lista de Atividades (Avisos) */
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .programacao-content {
+        flex-direction: column;
+    }
+
+    .programacao-imagem-container {
+        max-width: 100%;
+    }
+
+    /* Estilos para a tabela em telas menores */
+    .programacao-tabela {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .programacao-tabela thead {
+        display: none;
+    }
+
+    .programacao-tabela tr {
+        display: block;
+        padding: .625em;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .programacao-tabela td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .programacao-tabela td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}
+
+/* ========================= Página de Eventos ========================= */
+.eventos {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.eventos h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.eventos-content {
+    padding: 20px;
+}
+
+.eventos-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.evento {
+    display: flex;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white-color);
+    transition: transform 0.3s ease;
+}
+
+.evento:hover {
+    transform: translateY(-5px);
+}
+
+.evento-imagem {
+    width: 250px; /* Largura fixa para a imagem */
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Preenche o espaço sem distorcer */
+    border-radius: var(--border-radius) 0 0 var(--border-radius); /* Arredonda apenas os cantos superiores */
+}
+
+.evento-detalhes {
+    flex: 1;
+    padding: 15px;
+}
+
+.evento-detalhes h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.evento-detalhes p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: var(--light-text-color);
+}
+
+.evento-data,
+.evento-hora,
+.evento-local {
+    color: var(--light-text-color);
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #449d44;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .eventos-lista {
+        flex-direction: column;
+    }
+
+    .evento {
+        flex-direction: column;
+    }
+
+    .evento-imagem {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius) var(--border-radius) 0 0; /* Arredonda os cantos em cima */
+    }
+}
+
+/* ========================= Página da Galeria ========================= */
+.galeria {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.galeria h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.galeria-content {
+    padding: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Colunas menores em telas pequenas */
+    }
+
+    .galeria-item img {
+        height: 150px; /* Altura menor em telas pequenas */
+    }
+}
+
+/* ========================= Página de Oração ========================= */
+.oracao {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.oracao h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.oracao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.oracao-texto {
+    flex: 2 1 400px;
+}
+
+.oracao-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.oracao-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--default-font);
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.btn-enviar-pedido {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+.btn-enviar-pedido:hover {
+    background-color: #449d44;
+}
+
+.horarios-oracao {
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+}
+
+.horarios-oracao h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.horarios-oracao ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.horarios-oracao li {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.oracao-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.oracao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.oracao-imagem:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .oracao-content {
+        flex-direction: column;
+    }
+
+    .oracao-imagem-container {
+        max-width: 100%;
+    }
+}
+
+/* ========================= Página de Contato ========================= */
+.contato {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.contato h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contato-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contato-info {
+    flex: 1 1 300px;
+}
+
+.contato-info h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contato-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contato-info i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.contato-info a {
+    color: #1877f2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+    color: #449d44;
+}
+
+/* ========================= Redes Sociais ========================= */
+.redes-sociais {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.redes-sociais li {
+    margin: 0;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.social-button i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* ========================= Formulário de Contato ========================= */
+.contato-form {
+    flex: 2 1 400px;
+}
+
+.contato-form h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--default-font);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+.btn-enviar-mensagem {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-enviar-mensagem:hover {
+    background-color: #449d44;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .contato-content {
+        flex-direction: column;
+    }
+
+    .contato-info,
+    .contato-form {
+        flex: 1 1 100%;
+    }
+}
+
+/* ========================= Footer ========================= */
+.footer-container {
+    background-color: var(--footer-bg-color); /* Usando variável */
+    color: var(--white-color); /* Usando variável */
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.footer-section {
+    width: 30%;
+    max-height: 150px;
+    overflow: auto;
+}
+
+.footer-section h3 {
+    margin-bottom: 5px;
+}
+
+.footer-section a {
+    color: var(--white-color); /* Usando variável */
+    margin: 0 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 2px;
+}
+
+/* ========================= Responsividade ========================= */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .menu li {
+        margin-bottom: 10px;
+    }
+
+    .parallax-content h1 {
+        font-size: 2em;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Missão Responsiva */
+    .missao-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .missao-imagem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Oração Responsiva */
+    .oracao-content {
+        flex-direction: column;
+    }
+
+    .oracao-imagem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Programação Responsiva */
+    .programacao-tabela {
+        overflow-x: auto;
+    }
+
+    .programacao-tabela thead {
+        display: none;
+    }
+
+    .programacao-tabela tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .programacao-tabela td {
+        display: block;
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+        border-bottom: none;
+    }
+
+    .programacao-tabela td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Adiciona o atributo data-label para cada célula */
+    .programacao-tabela td:nth-of-type(1)::before { content: "Dia da Semana"; }
+    .programacao-tabela td:nth-of-type(2)::before { content: "Horário"; }
+    .programacao-tabela td:nth-of-type(3)::before { content: "Atividade"; }
+    .programacao-tabela td:nth-of-type(4)::before { content: "Descrição"; }
+
+    /* Sobre Responsivo */
+    .sobre-content {
+        flex-direction: column;
+    }
+
+    .sobre-imagem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Pastores Responsivo */
+    .pastores-content {
+        flex-direction: column;
+    }
+
+    .pastor {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .pastor-imagem {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Ministério Responsivo */
+    .ministerio-content {
+        flex-direction: column;
+    }
+
+    .ministerio-imagem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Pastor Individual Responsivo */
+    .pastor-individual-content {
+        flex-direction: column;
+    }
+
+    .pastor-individual-imagem {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* ========================= Keyframes ========================= */
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+/* Ajuste o tamanho da imagem para melhor se adequar ao layout */
+@media (max-width: 768px) {
+    .logo-imagem {
+        height: 200px; /* Ajuste o tamanho da logo em telas menores */
+    }
+
+    .text-container h1 {
+        font-size: 2em; /* Ajuste o tamanho do texto em telas menores */
+    }
+}
+
+/* ========================= Botões Flutuantes de Redes Sociais ========================= */
+#social-float-container {
+    position: fixed;
+    bottom: 20px; /* Aumenta o espaço na parte inferior */
+    right: 20px;  /* Aumenta o espaço na parte direita */
+    z-index: 1000;
+    padding: 10px; /* Adiciona um preenchimento interno */
+}
+
+.social-float .redes-sociais {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* Espaçamento entre os links */
+}
+
+.social-float .redes-sociais li {
+    margin: 0;
+}
+
+.social-float .social-link {
+    display: inline-block;
+    font-size: 2.0em; /* Tamanho dos ícones */
+    color: var(--accent-color); /* Cor dos ícones */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição para o hover */
+}
+
+.social-float .social-link:hover {
+    transform: scale(1.2); /* Aumenta o tamanho no hover */
+    color: var(--primary-color); /* Altera a cor no hover */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #social-float-container {
+        bottom: 10px; /* Aumenta o espaço na parte inferior em telas menores */
+        right: 10px;  /* Aumenta o espaço na parte direita em telas menores */
+        padding: 5px;
+    }
+}

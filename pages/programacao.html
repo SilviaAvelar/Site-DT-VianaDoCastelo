@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programação - Diante do Trono Viana</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header"></header>
+
+        <main>
+            <section class="container programacao">
+                <h1>Programação Semanal</h1>
+
+                <div class="programacao-content">
+                    <div class="programacao-imagem-container">
+                        <img src="../../assets/images/programacao.jpg" alt="Pessoas Participando de uma Atividade" class="programacao-imagem">
+                    </div>
+
+                    <div class="programacao-texto">
+                        <h2 class="animated-title">Nossa Semana</h2>
+                        <p><i class="fas fa-calendar-alt"></i> Participe conosco de cada momento da nossa semana, construindo juntos uma comunidade de fé e aprendizado.</p>
+
+                        <h2><i class="fas fa-list-alt"></i> Atividades Semanais</h2>
+                        <table class="programacao-tabela">
+                            <thead>
+                                <tr>
+                                    <th>Dia da Semana</th>
+                                    <th>Horário</th>
+                                    <th>Atividade</th>
+                                    <th>Descrição</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Dia da Semana">Domingo</td>
+                                    <td data-label="Horário">9:00</td>
+                                    <td data-label="Atividade">Escola Bíblica Dominical</td>
+                                    <td data-label="Descrição">Estudo da Palavra para todas as idades</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Dia da Semana">Domingo</td>
+                                    <td data-label="Horário">10:30</td>
+                                    <td data-label="Atividade">Culto de Celebração</td>
+                                    <td data-label="Descrição">Louvor, adoração e mensagem</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Dia da Semana">Terça</td>
+                                    <td data-label="Horário">19:30</td>
+                                    <td data-label="Atividade">Círculo de Oração</td>
+                                    <td data-label="Descrição">Intercessão pela igreja e famílias</td>
+                                </tr>
+                                 <tr>
+                                    <td data-label="Dia da Semana">Quarta</td>
+                                    <td data-label="Horário">19:30</td>
+                                    <td data-label="Atividade">Discipulado</td>
+                                    <td data-label="Descrição">Aprendendo mais da palavra</td>
+                                </tr>
+                                 <tr>
+                                    <td data-label="Dia da Semana">Sexta</td>
+                                    <td data-label="Horário">19:30</td>
+                                    <td data-label="Atividade">Rede de Jovens</td>
+                                    <td data-label="Descrição">Culto e comunhão com os jovens</td>
+                                </tr>
+                                <!-- Adicione mais linhas conforme a sua programação -->
+                            </tbody>
+                        </table>
+
+                         <h2><i class="fas fa-exclamation-triangle"></i> Avisos Importantes</h2>
+                        <ul class="atividades-lista">
+                            <li><i class="fas fa-bullhorn"></i> Acompanhe nossas redes sociais para eventos especiais.</li>
+                            <li><i class="fas fa-bus"></i> Entre em contato para solicitar transporte.</li>
+                            <li> <i class="fas fa-child"></i> Espaço especial para crianças em nossos cultos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+    <!-- Carrega o Header -->
+    <script>
+        fetch('../../src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <!-- Carrega o Footer -->
+    <script>
+        fetch('../../src/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    <script src="../../js/script.js"></script>
+</body>
+</html>

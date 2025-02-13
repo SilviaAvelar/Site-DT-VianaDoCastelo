@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adolescentes - Diante do Trono Viana</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header"></header>
+
+        <main>
+            <section class="container adolescentes">
+                <h1>Adolescentes</h1>
+
+                <div class="adolescentes-content">
+                    <div class="adolescentes-imagem-container">
+                        <img src="../../assets/images/adolescentes.jpg" alt="Grupo de Adolescentes" class="adolescentes-imagem">
+                    </div>
+
+                    <div class="adolescentes-texto">
+                        <h2 class="animated-title">Nosso Propósito</h2>
+                        <p><i class="fas fa-users"></i> Criar um ambiente onde adolescentes se sintam acolhidos, amados, e desafiados a crescerem na fé, descobrindo seu propósito em Deus.</p>
+
+                        <h2><i class="fas fa-calendar-alt"></i> Encontros e Atividades</h2>
+                        <ul class="atividades-lista">
+                            <li><i class="fas fa-church"></i> Cultos e estudos bíblicos semanais</li>
+                            <li><i class="fas fa-comments"></i> Grupos de discussão sobre temas relevantes</li>
+                            <li><i class="fas fa-gamepad"></i> Noites de jogos e atividades recreativas</li>
+                            <li><i class="fas fa-hands-helping"></i> Projetos sociais e voluntariado</li>
+                            <li><i class="fas fa-campground"></i> Acampamentos e retiros</li>
+                        </ul>
+
+                        <h2><i class="fas fa-question-circle"></i> Tem Alguma Dúvida?</h2>
+                        <p>Entre em contato com a gente! Mande uma mensagem para [Número do WhatsApp] ou siga a gente no Instagram <a href="[Link para o Instagram]">@adolescentesdtviana</a>.</p>
+
+                        <a href="#" class="btn-participe">Participe Conosco <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <section class="galeria-fotos">
+                    <h2>Confira Nossos Momentos</h2>
+                    <div class="galeria-grid">
+                        <div class="galeria-item">
+                            <img src="../../assets/images/adolescentes1.jpg" alt="Foto do grupo 1">
+                        </div>
+                        <div class="galeria-item">
+                            <img src="../../assets/images/adolescentes2.jpg" alt="Foto do grupo 2">
+                        </div>
+                        <div class="galeria-item">
+                            <img src="../../assets/images/adolescentes3.jpg" alt="Foto do grupo 3">
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
+
+        <footer id="footer"></footer>
+    </div>
+    <!-- Carrega o Header -->
+    <script>
+        fetch('../../src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <!-- Carrega o Footer -->
+    <script>
+        fetch('../../src/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('../../src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="../../js/script.js"></script>
+</body>
+</html>

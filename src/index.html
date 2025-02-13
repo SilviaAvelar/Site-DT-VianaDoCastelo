@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diante do Trono - Viana do Castelo</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <div id="root">
+        <!-- Header -->
+        <header id="header"></header>
+
+        <!-- Conteúdo Principal -->
+        <section id="parallax-container">
+            <div class="parallax-bg"></div>
+            <div class="parallax-content">
+                <div class="text-container">
+                    <img src="/assets/logo4.png" alt="Logo Diante do Trono Viana" class="logo-imagem">
+                    <h1>Igreja Diante do Trono - Viana do Castelo</h1>
+                </div>
+                <h2>Somos uma Igreja Viva.</h2>
+            </div>
+        </section>
+
+            <section id="sobre-nos">
+                <h2>Sobre Nós</h2>
+                <p>A Igreja Diante do Trono em Viana do Castelo, Portugal, é um local de fé, adoração e comunhão. Com um coração voltado para Deus e a missão de impactar a comunidade local e além, a igreja busca ser um reflexo do amor e da graça de Cristo, promovendo um ambiente acolhedor e cheio de vida para todos. Através de cultos vibrantes, eventos especiais e iniciativas de voluntariado, a igreja se dedica a cultivar um relacionamento profundo com Deus e a servir à sua cidade e região.</p>
+
+                <p>A igreja também é um ponto de encontro para aqueles que desejam crescer espiritualmente, seja por meio de estudos bíblicos, orações em grupo ou programas de apoio social. Com uma visão clara de ser uma igreja relevante, que atenda às necessidades da comunidade, a Igreja Diante do Trono busca sempre ser uma voz ativa de transformação e esperança.</p>
+                    
+                <p>Em um cenário moderno e dinâmico, a igreja se preocupa com as boas práticas de acessibilidade, proporcionando um ambiente inclusivo para todos os membros, sem exceção. Através de sua forte presença nas redes sociais e outras plataformas digitais, a Igreja Diante do Trono em Viana do Castelo também tem expandido seu alcance, levando a mensagem do evangelho para muitas pessoas em diferentes partes do mundo.</p>
+            </section>
+
+        </main>
+
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
+
+        <!-- Footer -->
+        <footer id="footer"></footer >
+    </div>
+
+    <!-- Carrega o Footer -->
+    <script>
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('../../src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/script.js"></script> <!-- Adicione esta linha -->
+</body>
+</html>

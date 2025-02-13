@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviva Viana - Diante do Trono Viana</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="root">
+        <header id="header"></header>
+
+        <main>
+            <section class="container aviva-viana">
+                <h1>Aviva Viana</h1>
+
+                <div class="aviva-viana-content">
+                    <div class="aviva-viana-imagem-container">
+                        <img src="../../assets/images/aviva-viana.jpg" alt="Reunião do Aviva Viana" class="aviva-viana-imagem">
+                    </div>
+
+                    <div class="aviva-viana-texto">
+                        <h2 class="animated-title">Nosso Propósito</h2>
+                        <p><i class="fas fa-home"></i> Levar o avivamento para os lares, fortalecendo a comunhão, a oração e o estudo da Palavra em pequenos grupos.</p>
+
+                        <h2><i class="fas fa-fire"></i> O Que Fazemos</h2>
+                        <ul class="atividades-lista">
+                            <li><i class="fas fa-bible"></i> Leitura e estudo da Bíblia</li>
+                            <li><i class="fas fa-praying-hands"></i> Momentos de oração e intercessão</li>
+                            <li><i class="fas fa-share-alt"></i> Partilha de experiências e testemunhos</li>
+                            <li><i class="fas fa-heart"></i> Fortalecimento dos laços de amizade e comunhão</li>
+                        </ul>
+
+                        <h2><i class="fas fa-calendar-alt"></i> Quando e Onde</h2>
+                        <p>Nossas reuniões acontecem todas as [Dia da Semana] às [Horário] em lares diferentes da nossa igreja. Para saber o endereço da reunião desta semana, entre em contato conosco!</p>
+
+                        <h2><i class="fas fa-envelope"></i> Como Participar</h2>
+                        <p>Envie um e-mail para <a href="mailto:[E-mail do Ministério]">[E-mail do Ministério]</a> ou fale com [Nome do Responsável] pelo telefone [Telefone do Responsável].</p>
+
+                        <a href="#" class="btn-participe">Participe do Aviva Viana <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <section class="depoimentos">
+                    <h2>O Impacto do Aviva Viana</h2>
+                    <div class="depoimentos-slider">
+                        <div class="depoimento">
+                            <p>"O Aviva Viana transformou a atmosfera da minha casa e fortaleceu minha fé." - [Nome do Membro 1]</p>
+                        </div>
+                        <div class="depoimento">
+                            <p>"Encontrei um apoio incrível e aprendi muito com os irmãos do grupo." - [Nome do Membro 2]</p>
+                        </div>
+                        <div class="depoimento">
+                            <p>"O Aviva Viana me ajudou a crescer espiritualmente e a me sentir mais conectado com a igreja." - [Nome do Membro 3]</p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+    <!-- Carrega o Header -->
+    <script>
+        fetch('../../src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <!-- Carrega o Footer -->
+    <script>
+        fetch('../../src/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    <script src="../../js/script.js"></script>
+</body>
+</html>

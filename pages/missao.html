@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão - Diante do Trono Viana</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div id="root">
+        <header id="header"></header>
+
+        <main>
+            <section class="container missao-container">
+                <h1>Nossa Missão</h1>
+
+                <div class="missao-content">
+                    <div class="missao-imagem-container">
+                        <img src="../assets/images/missao.jpg" alt="Mãos Estendidas em Oração" class="missao-imagem">
+                    </div>
+
+                    <div class="missao-texto">
+                        <h2 class="animated-title">Amando a Deus, Amando Pessoas, Servindo o Mundo</h2>
+                        <p>Na Diante do Trono Viana, nossa missão é clara e inspirada no coração de Deus: amar a Deus acima de tudo, amar as pessoas como a nós mesmos e servir o mundo com compaixão e graça.</p>
+
+                        <h3>Nossos Valores Fundamentais:</h3>
+                        <ul class="valores-lista">
+                            <li><i class="fas fa-bible"></i> Fé Inabalável</li>
+                            <li><i class="fas fa-heart"></i> Amor Incondicional</li>
+                            <li><i class="fas fa-hands-helping"></i> Serviço Humilde</li>
+                            <li><i class="fas fa-users"></i> Comunhão Fraterna</li>
+                            <li><i class="fas fa-star"></i> Excelência em Tudo</li>
+                        </ul>
+
+                        <h3>Como Cumprimos Nossa Missão:</h3>
+                        <ul class="cumprimos-lista">
+                            <li><i class="fas fa-church"></i> Cultos inspiradores e relevantes</li>
+                            <li><i class="fas fa-graduation-cap"></i> Programas de discipulado</li>
+                            <li><i class="fas fa-globe"></i> Apoio a missões locais e globais</li>
+                            <li><i class="fas fa-hand-holding-heart"></i> Projetos sociais</li>
+                            <li><i class="fas fa-calendar-alt"></i> Eventos e atividades</li>
+                        </ul>
+
+                        <p class="call-to-action">Convidamos você a se juntar a nós nesta jornada de fé, amor e serviço. <a href="#">Saiba mais e faça a diferença!</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer id="footer"></footer>
+    </div>
+
+    <script>
+        // Carrega o Header
+        fetch('../src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+        // Carrega o Footer
+        fetch('../src/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
