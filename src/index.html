@@ -81,9 +81,15 @@
     </div> <!-- Fechamento da div .site-content -->
 
     <!-- Footer -->
-    <footer id="footer-container">
-        <!-- O conteúdo do rodapé (copyright) será carregado aqui -->
-    </footer>
+    <footer id="footer-container"></footer>
+
+    <script>
+        fetch('/src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
 
     <!-- Carrega o Footer -->
     <script>

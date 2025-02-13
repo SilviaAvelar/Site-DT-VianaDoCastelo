@@ -42,6 +42,7 @@ a {
     color: var(--text-color); /* Usando variável */
 }
 
+/* Flexbox para o layout principal */
 html, body {
     height: 100%; /* Garante que o html e o body ocupem toda a altura da janela */
 }

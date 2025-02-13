@@ -36,43 +36,46 @@
 
 <body>
     <div id="root">
-        <header id="header"></header>
+        <div class="site-content"> <!-- A tag .site-content ABRINDO aqui -->
+            <header id="header"></header>
 
-        <main>
-            <section class="container galeria">
-                <h1>Galeria de Fotos e Vídeos</h1>
+            <main>
+                <section class="container galeria">
+                    <h1>Galeria de Fotos e Vídeos</h1>
 
-                <div class="galeria-content">
-                    <div class="galeria-grid">
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria1.jpg" alt="Descrição da Imagem">
+                    <div class="galeria-content">
+                        <div class="galeria-grid">
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria1.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria2.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria3.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria4.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria5.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <div class="galeria-item">
+                                <img src="../../assets/images/galeria6.jpg" alt="Descrição da Imagem">
+                            </div>
+                            <!-- Adicione mais itens da galeria conforme necessário -->
                         </div>
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria2.jpg" alt="Descrição da Imagem">
-                        </div>
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria3.jpg" alt="Descrição da Imagem">
-                        </div>
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria4.jpg" alt="Descrição da Imagem">
-                        </div>
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria5.jpg" alt="Descrição da Imagem">
-                        </div>
-                        <div class="galeria-item">
-                            <img src="../../assets/images/galeria6.jpg" alt="Descrição da Imagem">
-                        </div>
-                        <!-- Adicione mais itens da galeria conforme necessário -->
                     </div>
-                </div>
-            </section>
-        </main>
+                </section>
+            </main>
 
-        <!-- Incluir botões flutuantes -->
-        <div id="social-float-container"></div>
+            <!-- Incluir botões flutuantes -->
+            <div id="social-float-container"></div>
+        </div> <!-- A tag .site-content FECHANDO aqui -->
 
         <footer id="footer"></footer>
     </div>
+
     <!-- Carrega o Header -->
     <script>
         fetch('../../src/header.html')
@@ -104,6 +107,4 @@
     <script src="/js/header.js" type="module"></script>
     <script src="/js/animacoes.js" type="module"></script>
 </body>
-</body>
-
-</html>
+</html
