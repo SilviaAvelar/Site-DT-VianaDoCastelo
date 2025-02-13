@@ -1,0 +1,114 @@
+/* ========================= Missão ========================= */
+.missao-container {
+    padding: 50px 0;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.missao-container h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.missao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+.missao-imagem-container {
+    flex: 1 1 300px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.missao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius); /* Usando variável */
+    box-shadow: var(--box-shadow); /* Usando variável */
+    transition: transform 0.3s ease;
+}
+
+.missao-imagem:hover {
+    transform: scale(1.05);
+}
+
+.missao-texto {
+    flex: 2 1 400px;
+}
+
+.missao-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color); /* Usando variável */
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.missao-texto h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color); /* Usando variável */
+}
+
+.missao-texto h3 {
+    font-size: 1.5em;
+    color: #444;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.valores-lista,
+.cumprimos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.valores-lista li,
+.cumprimos-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.valores-lista li i,
+.cumprimos-lista li i {
+    color: var(--accent-color); /* Usando variável */
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.cumprimos-lista li {
+    transition: transform 0.3s ease;
+}
+
+.cumprimos-lista li:hover {
+    transform: translateX(5px);
+}
+
+.call-to-action {
+    font-size: 1.2em;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.call-to-action a {
+    color: var(--accent-color); /* Usando variável */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.call-to-action a:hover {
+    color: #449d44;
+}

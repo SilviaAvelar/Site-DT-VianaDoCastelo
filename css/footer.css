@@ -1,0 +1,75 @@
+/* ========================= Footer ========================= */
+#footer-bottom {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--footer-bg-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-container {
+    background-color: var(--footer-bg-color); /* Usando variável */
+    color: var(--white-color); /* Usando variável */
+    padding: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    padding: 20px; /* Adicionado para espaçamento interno */
+}
+
+.footer-section {
+    width: 30%;
+    max-height: 150px;
+    overflow: auto;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.footer-section h3 {
+    margin-bottom: 5px;
+    font-size: 1.2em; /* Tamanho da fonte */
+}
+
+.footer-section a {
+    color: var(--white-color); /* Usando variável */
+    margin: 0 10px;
+    font-size: 1em;
+    margin-bottom: 10px;
+    display: block; /* Para que os links ocupem a largura total */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+}
+
+.footer-section a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+.footer-section p {
+    margin-bottom: 2px;
+    font-size: 0.9em; /* Tamanho da fonte */
+    line-height: 1.4; /* Espaçamento entre as linhas */
+}
+
+/* ========================= Responsividade (Footer) ========================= */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column; /* Empilha as seções em telas menores */
+        padding: 10px; /* Reduz o espaçamento */
+    }
+
+    .footer-section {
+        width: 100%; /* Ocupa a largura total */
+        margin-bottom: 20px; /* Adiciona espaço entre as seções */
+        text-align: center; /* Centraliza o texto nas seções */
+    }
+}

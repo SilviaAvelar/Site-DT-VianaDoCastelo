@@ -1,0 +1,61 @@
+/* ========================= Geral ========================= */
+:root {
+    /* Cores */
+    --primary-color: #79d7be;
+    --secondary-color: #b2c8ba;
+    --accent-color: #5cb85c;
+    --text-color: #333;
+    --light-text-color: #666;
+    --white-color: #fff;
+    --light-bg-color: #f4f4f4;
+    --footer-bg-color: rgb(38, 73, 52);
+
+    /* Fontes */
+    --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --default-font: Arial, sans-serif;
+
+    /* Sombras */
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Bordas */
+    --border-radius: 8px;
+
+    /* Transições */
+    --transition-default: all 0.3s ease;
+}
+
+body {
+    font-family: var(--default-font);
+    margin: 0;
+    background-color: var(--light-bg-color);
+    color: var(--text-color);
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color); /* Usando variável */
+}
+
+html, body {
+    height: 100%; /* Garante que o html e o body ocupem toda a altura da janela */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe pelo menos a altura da viewport */
+}
+
+.site-content {
+    flex: 1 0 auto; /* Expande para preencher o espaço restante */
+}
+
+#main-footer {
+    flex-shrink: 0; /* Impede que o footer encolha */
+}

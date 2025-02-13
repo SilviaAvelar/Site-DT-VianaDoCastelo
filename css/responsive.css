@@ -1,0 +1,98 @@
+/* Media Queries para responsividade */
+
+/* Para telas menores que 768px (smartphones) */
+@media (max-width: 768px) {
+    .header #branding,
+    .header nav {
+        float: none;
+        text-align: center;
+    }
+
+    .header nav li {
+        float: none;
+        display: block;
+    }
+
+    #newsletter h1,
+    #newsletter form {
+        float: none;
+        text-align: center;
+    }
+
+    #newsletter input[type="email"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #boxes .box {
+        width: 100%;
+        float: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Mostra o botão do menu */
+    }
+
+    nav {
+        display: none; /* Esconde o menu por padrão */
+    }
+
+    nav.active {
+        display: block; /* Mostra o menu quando a classe 'active' é adicionada */
+    }
+}
+
+/* Para telas menores que 480px (smartphones menores) */
+@media (max-width: 480px) {
+    #showcase h1 {
+        font-size: 36px;
+    }
+
+    #showcase p {
+        font-size: 16px;
+    }
+}
+
+/* ========================= Botões Flutuantes de Redes Sociais ========================= */
+#social-float-container {
+    position: fixed;
+    bottom: 20px; /* Aumenta o espaço na parte inferior */
+    right: 20px;  /* Aumenta o espaço na parte direita */
+    z-index: 1000;
+    padding: 10px; /* Adiciona um preenchimento interno */
+}
+
+.social-float .redes-sociais {
+    display: flex;
+    flex-direction: column; /* Alinha os botões verticalmente */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 10px; /* Espaçamento entre os links */
+}
+
+.social-float .redes-sociais li {
+    margin: 0;
+}
+
+.social-float .social-link {
+    display: inline-block;
+    font-size: 2.0em; /* Tamanho dos ícones */
+    color: var(--accent-color); /* Cor dos ícones */
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Transição para o hover */
+}
+
+.social-float .social-link:hover {
+    transform: scale(1.2); /* Aumenta o tamanho no hover */
+    color: var(--primary-color); /* Altera a cor no hover */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    #social-float-container {
+        bottom: 10px; /* Aumenta o espaço na parte inferior em telas menores */
+        right: 10px;  /* Aumenta o espaço na parte direita em telas menores */
+        padding: 5px;
+    }
+}

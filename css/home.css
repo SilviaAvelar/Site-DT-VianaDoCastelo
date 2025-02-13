@@ -1,0 +1,90 @@
+/* ========================= Parallax ========================= */
+#parallax-container {
+    position: relative;
+    height: 1500px;
+    overflow: hidden;
+}
+
+.parallax-bg {
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/biblia.jpg') no-repeat center top; /* Overlay e imagem */
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    animation: zoomInOut 4s infinite alternate ease-in-out;
+    transform-origin: center;
+}
+
+.parallax-content {
+    position: relative;
+    z-index: 2;
+    color: rgb(211, 198, 198);
+    padding: 10px;
+    align-items: center;
+    height: 30%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-right: 0;
+}
+
+.text-container h1 {
+    font-size: 3em;
+    margin-bottom: -20px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.parallax-content h2 {
+    font-size: 1.5em;
+    text-align: center;
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo-imagem {
+    height: 230px;
+    width: auto;
+    position: relative;
+    margin-left: 0;
+}
+
+/* ========================= Sobre Nós Home ========================= */
+#sobre-nos {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+#sobre-nos h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+#sobre-nos p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 0 50px;
+    text-indent: 30px;
+}

@@ -1,0 +1,172 @@
+/* ========================= Adolescentes ========================= */
+.adolescentes {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+/* Estilos de Cores para Adolescentes */
+.adolescentes {
+    --primary-color: #29ABE2;  /* Azul Neon */
+    --secondary-color: #BBDEFB; /* Azul Mais Claro */
+    --accent-color: #FF69B4;   /* Rosa Choque */
+    --light-text-color: #757575;
+}
+
+.adolescentes h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Azul Neon */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.adolescentes-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--secondary-color); /* Azul Mais Claro */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.adolescentes-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.adolescentes-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.adolescentes-imagem:hover {
+    transform: scale(1.05);
+}
+
+.adolescentes-texto {
+    flex: 2 1 400px;
+}
+
+.adolescentes-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Azul Neon */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.adolescentes-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-participe {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Rosa Choque */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-participe:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Fotos */
+.galeria-fotos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-fotos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .adolescentes-content {
+        flex-direction: column;
+    }
+
+    .adolescentes-imagem-container {
+        max-width: 100%;
+    }
+}

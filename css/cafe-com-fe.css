@@ -1,0 +1,171 @@
+/* ========================= Cá Fé ========================= */
+.cafe-com-fe {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+/* Estilos de Cores para o Cá Fé (Opção 1 - Tons Terrosos) */
+.cafe-com-fe {
+    --primary-color: #795548;    /* Marrom */
+    --secondary-color: #A1887F;   /* Marrom claro */
+    --accent-color: #FFC107;     /* Amarelo dourado */
+    --light-bg-color: #EFEBE9;    /* Bege claro */
+}
+
+.cafe-com-fe h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Marrom (ou Laranja Queimado ou Marrom Escuro) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.cafe-com-fe-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--light-bg-color); /* Bege claro (ou Bege bem claro ou Branco acinzentado) */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.cafe-com-fe-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.cafe-com-fe-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.cafe-com-fe-imagem:hover {
+    transform: scale(1.05);
+}
+
+.cafe-com-fe-texto {
+    flex: 2 1 400px;
+}
+
+.cafe-com-fe-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Marrom (ou Laranja Queimado ou Marrom Escuro) */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.cafe-com-fe-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Amarelo dourado (ou Verde ou Marrom médio) */
+}
+
+.produtos-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.produtos-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.produtos-lista li:hover {
+    transform: translateX(5px);
+}
+
+.produtos-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+.btn-visite {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-visite:hover {
+    background-color: var(--accent-color); /* Amarelo dourado (ou Verde ou Marrom médio) */
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Produtos */
+.galeria-produtos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-produtos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .cafe-com-fe-content {
+        flex-direction: column;
+    }
+
+    .cafe-com-fe-imagem-container {
+        max-width: 100%;
+    }
+}

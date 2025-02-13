@@ -1,0 +1,100 @@
+/* ========================= Página de Eventos ========================= */
+.eventos {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.eventos h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.eventos-content {
+    padding: 20px;
+}
+
+.eventos-lista {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.evento {
+    display: flex;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white-color);
+    transition: transform 0.3s ease;
+}
+
+.evento:hover {
+    transform: translateY(-5px);
+}
+
+.evento-imagem {
+    width: 250px; /* Largura fixa para a imagem */
+    height: 200px; /* Altura fixa para a imagem */
+    object-fit: cover; /* Preenche o espaço sem distorcer */
+    border-radius: var(--border-radius) 0 0 var(--border-radius); /* Arredonda apenas os cantos superiores */
+}
+
+.evento-detalhes {
+    flex: 1;
+    padding: 15px;
+}
+
+.evento-detalhes h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: var(--primary-color);
+}
+
+.evento-detalhes p {
+    margin-bottom: 8px;
+    line-height: 1.4;
+    color: var(--light-text-color);
+}
+
+.evento-data,
+.evento-hora,
+.evento-local {
+    color: var(--light-text-color);
+}
+
+.btn-saiba-mais {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+    background-color: #449d44;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .eventos-lista {
+        flex-direction: column;
+    }
+
+    .evento {
+        flex-direction: column;
+    }
+
+    .evento-imagem {
+        width: 100%;
+        height: auto;
+        border-radius: var(--border-radius) var(--border-radius) 0 0; /* Arredonda os cantos em cima */
+    }
+}

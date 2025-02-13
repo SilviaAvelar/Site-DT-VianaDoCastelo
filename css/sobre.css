@@ -1,0 +1,162 @@
+/* ========================= Sobre a Igreja ========================= */
+.sobre-igreja {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.sobre-igreja h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-igreja h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+}
+
+.sobre-igreja p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+.secao-destaque {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.secao-destaque:hover {
+    transform: translateY(-5px); /* Eleva um pouco a seção no hover */
+}
+
+.secao-valores {
+    margin-bottom: 30px;
+}
+
+.valores-lista {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.valores-lista li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+.valores-lista li i {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: var(--accent-color); /* Usando variável */
+}
+
+.equipe-pastoral-imagem {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius); /* Usando variável */
+    margin-top: 20px;
+    box-shadow: var(--box-shadow); /* Usando variável */
+}
+
+/* ========================= Sobre os Pastores ========================= */
+.sobre-pastores {
+    padding: 50px 0;
+    text-align: center;
+    font-family: var(--main-font); /* Usando variável */
+    color: var(--light-text-color); /* Usando variável */
+}
+
+.sobre-pastores h1 {
+    font-size: 3em;
+    margin-bottom: 30px;
+    color: var(--text-color); /* Usando variável */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pastores-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os pastores em telas maiores */
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.pastor {
+    display: flex;
+    flex-direction: column; /* Organiza a imagem e informações em coluna */
+    align-items: center;
+    width: 100%; /* Ocupa toda a largura em telas menores */
+    max-width: 400px; /* Limita a largura em telas maiores */
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius); /* Usando variável */
+    overflow: hidden;
+    box-shadow: var(--box-shadow); /* Usando variável */
+    transition: transform 0.3s ease;
+}
+
+.pastor:hover {
+    transform: translateY(-5px);
+}
+
+.pastor-imagem, .pastora-imagem {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.pastor-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.pastor-info h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.pastor-info p {
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.pastor-info i {
+    color: var(--accent-color); /* Usando variável */
+    margin-right: 5px;
+}
+
+.familia-pastoral {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.familia-pastoral h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Usando variável */
+}
+
+.familia-imagem {
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius); /* Usando variável */
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow); /* Usando variável */
+}

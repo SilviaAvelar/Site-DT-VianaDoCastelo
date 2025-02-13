@@ -1,0 +1,35 @@
+/* ========================= Header ========================= */
+nav {
+    color: var(--white-color);
+    height: auto;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent; /* Inicialmente transparente */
+    transition: background-color 0.3s ease;
+}
+
+.nav-opaque {
+    background-color: rgba(121, 215, 190, 0.9) !important; /* Cor totalmente opaca */
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+nav .logo a {
+    color: var(--white-color);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}

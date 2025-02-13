@@ -1,0 +1,171 @@
+/* ========================= Mulheres ========================= */
+.mulheres {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.mulheres {
+    --primary-color: #B76E79;    
+    --secondary-color: #F5E7E2;   
+    --accent-color: #D8BFD8;     
+    --light-bg-color: #FAF0E6;   
+}
+
+.mulheres h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color); /* Rosa Vibrante (ou Rosé Gold ou Rosa Pastel) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.mulheres-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--light-bg-color); /* Lilás Claro (ou Creme ou Amarelo Claro) */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.mulheres-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.mulheres-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.mulheres-imagem:hover {
+    transform: scale(1.05);
+}
+
+.mulheres-texto {
+    flex: 2 1 400px;
+}
+
+.mulheres-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color); /* Rosa Vibrante (ou Rosé Gold ou Rosa Pastel) */
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.mulheres-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color); /* Roxo (ou Lilás Acinzentado ou Lilás Pastel) */
+}
+
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Botão de Inscrição */
+.btn-junte-se {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color); /* Roxo (ou Lilás Acinzentado ou Lilás Pastel) */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-junte-se:hover {
+    background-color: #449d44;
+}
+
+/* Animações */
+.animated-title {
+    animation: fadeInTitle 1s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Galeria de Eventos */
+.galeria-eventos {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.galeria-eventos h2 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.galeria-item {
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para as imagens */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.galeria-item img:hover {
+    transform: scale(1.1);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .mulheres-content {
+        flex-direction: column;
+    }
+
+    .mulheres-imagem-container {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+/* ========================= Apoio ao Culto ========================= */
+.apoio-culto {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.apoio-culto h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.apoio-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.apoio-texto {
+    flex: 2 1 400px;
+}
+
+.apoio-texto h2 {
+    font-size: 2.2em;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.apoio-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .apoio-content {
+        flex-direction: column;
+    }
+}

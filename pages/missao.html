@@ -1,12 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Missão - Diante do Trono Viana</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/adolescentes.css">
+    <link rel="stylesheet" href="/css/apoio-culto.css">
+    <link rel="stylesheet" href="/css/aviva-viana.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cafe-com-fe.css">
+    <link rel="stylesheet" href="/css/casais.css">
+    <link rel="stylesheet" href="/css/comunicacao.css">
+    <link rel="stylesheet" href="/css/contato.css">
+    <link rel="stylesheet" href="/css/eventos.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/galeria.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/jovens.css">
+    <link rel="stylesheet" href="/css/louvor.css">
+    <link rel="stylesheet" href="/css/ministerios.css">
+    <link rel="stylesheet" href="/css/ministerio-infantil.css">
+    <link rel="stylesheet" href="/css/ministerio-louvor.css">
+    <link rel="stylesheet" href="/css/missao.css">
+    <link rel="stylesheet" href="/css/mulheres.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/oracao.css">
+    <link rel="stylesheet" href="/css/programacao.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div id="root">
         <header id="header"></header>
@@ -22,7 +51,8 @@
 
                     <div class="missao-texto">
                         <h2 class="animated-title">Amando a Deus, Amando Pessoas, Servindo o Mundo</h2>
-                        <p>Na Diante do Trono Viana, nossa missão é clara e inspirada no coração de Deus: amar a Deus acima de tudo, amar as pessoas como a nós mesmos e servir o mundo com compaixão e graça.</p>
+                        <p>Na Diante do Trono Viana, nossa missão é clara e inspirada no coração de Deus: amar a Deus
+                            acima de tudo, amar as pessoas como a nós mesmos e servir o mundo com compaixão e graça.</p>
 
                         <h3>Nossos Valores Fundamentais:</h3>
                         <ul class="valores-lista">
@@ -42,11 +72,15 @@
                             <li><i class="fas fa-calendar-alt"></i> Eventos e atividades</li>
                         </ul>
 
-                        <p class="call-to-action">Convidamos você a se juntar a nós nesta jornada de fé, amor e serviço. <a href="#">Saiba mais e faça a diferença!</a></p>
+                        <p class="call-to-action">Convidamos você a se juntar a nós nesta jornada de fé, amor e serviço.
+                            <a href="#">Saiba mais e faça a diferença!</a></p>
                     </div>
                 </div>
             </section>
         </main>
+
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
 
         <footer id="footer"></footer>
     </div>
@@ -66,6 +100,19 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
-    <script src="../js/script.js"></script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('/src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/global.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+    <script src="/js/animacoes.js" type="module"></script>
 </body>
+
 </html>

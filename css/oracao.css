@@ -1,0 +1,137 @@
+/* ========================= Página de Oração ========================= */
+.oracao {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.oracao h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.oracao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.oracao-texto {
+    flex: 2 1 400px;
+}
+
+.oracao-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.oracao-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--default-font);
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.btn-enviar-pedido {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Altera o cursor para indicar que é clicável */
+}
+
+.btn-enviar-pedido:hover {
+    background-color: #449d44;
+}
+
+.horarios-oracao {
+    background-color: var(--light-bg-color);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+}
+
+.horarios-oracao h2 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.horarios-oracao ul {
+    list-style: disc;
+    padding-left: 25px;
+}
+
+.horarios-oracao li {
+    margin-bottom: 8px;
+    color: #666;
+}
+
+.oracao-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.oracao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.oracao-imagem:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .oracao-content {
+        flex-direction: column;
+    }
+
+    .oracao-imagem-container {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,168 @@
+/* ========================= Página de Contato ========================= */
+.contato {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.contato h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.contato-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.contato-info {
+    flex: 1 1 300px;
+}
+
+.contato-info h2 {
+    font-size: 1.8em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contato-info p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.contato-info i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.contato-info a {
+    color: #1877f2;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+    color: #449d44;
+}
+
+/* ========================= Redes Sociais ========================= */
+.redes-sociais {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.redes-sociais li {
+    margin: 0;
+}
+
+.social-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    color: var(--white-color);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1em;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.social-button i {
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* ========================= Formulário de Contato ========================= */
+.contato-form {
+    flex: 2 1 400px;
+}
+
+.contato-form h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1em;
+    font-family: var(--default-font);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group textarea {
+    height: 150px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.5);
+}
+
+.btn-enviar-mensagem {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-enviar-mensagem:hover {
+    background-color: #449d44;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .contato-content {
+        flex-direction: column;
+    }
+
+    .contato-info,
+    .contato-form {
+        flex: 1 1 100%;
+    }
+}

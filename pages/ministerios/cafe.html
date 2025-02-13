@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cá Fé - Diante do Trono Viana</title>
-    <link rel="stylesheet" href="../../css/style.css">
+
+    <link rel="stylesheet" href="/css/adolescentes.css">
+    <link rel="stylesheet" href="/css/apoio-culto.css">
+    <link rel="stylesheet" href="/css/aviva-viana.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cafe-com-fe.css">
+    <link rel="stylesheet" href="/css/casais.css">
+    <link rel="stylesheet" href="/css/comunicacao.css">
+    <link rel="stylesheet" href="/css/contato.css">
+    <link rel="stylesheet" href="/css/eventos.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/galeria.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/jovens.css">
+    <link rel="stylesheet" href="/css/louvor.css">
+    <link rel="stylesheet" href="/css/ministerios.css">
+    <link rel="stylesheet" href="/css/ministerio-infantil.css">
+    <link rel="stylesheet" href="/css/ministerio-louvor.css">
+    <link rel="stylesheet" href="/css/missao.css">
+    <link rel="stylesheet" href="/css/mulheres.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/oracao.css">
+    <link rel="stylesheet" href="/css/programacao.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/sobre.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <div id="root">
         <header id="header"></header>
@@ -17,28 +44,33 @@
 
                 <div class="cafe-com-fe-content">
                     <div class="cafe-com-fe-imagem-container">
-                        <img src="../../assets/images/cafe-com-fe.jpg" alt="Ambiente do Cá Fé" class="cafe-com-fe-imagem">
+                        <img src="../../assets/images/cafe-com-fe.jpg" alt="Ambiente do Cá Fé"
+                            class="cafe-com-fe-imagem">
                     </div>
 
                     <div class="cafe-com-fe-texto">
                         <h2 class="animated-title">Nosso Espaço</h2>
-                        <p><i class="fas fa-coffee"></i> Um lugar aconchegante para tomar um café especial, fortalecer a fé, e conhecer os talentos da nossa comunidade.</p>
+                        <p><i class="fas fa-coffee"></i> Um lugar aconchegante para tomar um café especial, fortalecer a
+                            fé, e conhecer os talentos da nossa comunidade.</p>
 
                         <h2><i class="fas fa-store"></i> Produtos e Artes</h2>
                         <p>Aqui você encontra:</p>
                         <ul class="produtos-lista">
                             <li><i class="fas fa-mug-hot"></i> Cafés especiais e bebidas deliciosas</li>
                             <li><i class="fas fa-gifts"></i> Artesanato local com a temática cristã</li>
-                            <li><i class="fas fa-paint-brush"></i> Quadros, desenhos e pinturas de artistas da igreja</li>
+                            <li><i class="fas fa-paint-brush"></i> Quadros, desenhos e pinturas de artistas da igreja
+                            </li>
                             <li><i class="fas fa-book"></i> Livros, bíblias e materiais devocionais</li>
                             <li><i class="fas fa-tshirt"></i> Camisetas, canecas e outros produtos personalizados</li>
                         </ul>
 
                         <h2><i class="fas fa-users"></i> Apoie Nossos Empreendedores</h2>
-                        <p>O Cá Fé é um espaço para valorizar e divulgar os talentos da nossa igreja. Venha conhecer os produtos exclusivos e apoiar nossos empreendedores!</p>
+                        <p>O Cá Fé é um espaço para valorizar e divulgar os talentos da nossa igreja. Venha conhecer os
+                            produtos exclusivos e apoiar nossos empreendedores!</p>
 
                         <h2><i class="fas fa-map-marker-alt"></i> Localização e Horário</h2>
-                        <p>Estamos localizados em [Endereço do Cá Fé] e abrimos de [Dias da Semana] das [Horário de Abertura] às [Horário de Fechamento].</p>
+                        <p>Estamos localizados em [Endereço do Cá Fé] e abrimos de [Dias da Semana] das [Horário de
+                            Abertura] às [Horário de Fechamento].</p>
 
                         <a href="#" class="btn-visite">Visite-nos <i class="fas fa-arrow-right"></i></a>
                     </div>
@@ -61,6 +93,9 @@
             </section>
         </main>
 
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
+
         <footer id="footer"></footer>
     </div>
     <!-- Carrega o Header -->
@@ -80,6 +115,19 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
-    <script src="../../js/script.js"></script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('/src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/global.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+    <script src="/js/animacoes.js" type="module"></script>
 </body>
+
 </html>

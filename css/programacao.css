@@ -1,0 +1,155 @@
+/* ========================= Programação (Estilo Consistente) ========================= */
+.programacao {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.programacao h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.programacao-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.programacao-imagem-container {
+    flex: 1 1 400px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.programacao-imagem {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    height: auto;
+}
+
+.programacao-imagem:hover {
+    transform: scale(1.05);
+}
+
+.programacao-texto {
+    flex: 2 1 400px;
+}
+
+.programacao-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.programacao-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Estilo da Tabela */
+.programacao-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: var(--default-font);
+}
+
+.programacao-tabela thead {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: left;
+}
+
+.programacao-tabela th,
+.programacao-tabela td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.programacao-tabela tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo da Lista de Atividades (Avisos) */
+.atividades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.atividades-lista li {
+    font-size: 1.1em;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.atividades-lista li:hover {
+    transform: translateX(5px);
+}
+
+.atividades-lista li i {
+    color: var(--accent-color);
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .programacao-content {
+        flex-direction: column;
+    }
+
+    .programacao-imagem-container {
+        max-width: 100%;
+    }
+
+    /* Estilos para a tabela em telas menores */
+    .programacao-tabela {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .programacao-tabela thead {
+        display: none;
+    }
+
+    .programacao-tabela tr {
+        display: block;
+        padding: .625em;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .programacao-tabela td {
+        border: none;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    .programacao-tabela td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+    }
+}

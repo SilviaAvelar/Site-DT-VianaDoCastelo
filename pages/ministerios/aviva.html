@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aviva Viana - Diante do Trono Viana</title>
-    <link rel="stylesheet" href="../../css/style.css">
+
+    <<link rel="stylesheet" href="/css/adolescentes.css">
+    <link rel="stylesheet" href="/css/apoio-culto.css">
+    <link rel="stylesheet" href="/css/aviva-viana.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cafe-com-fe.css">
+    <link rel="stylesheet" href="/css/casais.css">
+    <link rel="stylesheet" href="/css/comunicacao.css">
+    <link rel="stylesheet" href="/css/contato.css">
+    <link rel="stylesheet" href="/css/eventos.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/galeria.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/jovens.css">
+    <link rel="stylesheet" href="/css/louvor.css">
+    <link rel="stylesheet" href="/css/ministerios.css">
+    <link rel="stylesheet" href="/css/ministerio-infantil.css">
+    <link rel="stylesheet" href="/css/ministerio-louvor.css">
+    <link rel="stylesheet" href="/css/missao.css">
+    <link rel="stylesheet" href="/css/mulheres.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/oracao.css">
+    <link rel="stylesheet" href="/css/programacao.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/sobre.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body>
     <div id="root">
         <header id="header"></header>
@@ -17,12 +44,14 @@
 
                 <div class="aviva-viana-content">
                     <div class="aviva-viana-imagem-container">
-                        <img src="../../assets/images/aviva-viana.jpg" alt="Reunião do Aviva Viana" class="aviva-viana-imagem">
+                        <img src="../../assets/images/aviva-viana.jpg" alt="Reunião do Aviva Viana"
+                            class="aviva-viana-imagem">
                     </div>
 
                     <div class="aviva-viana-texto">
                         <h2 class="animated-title">Nosso Propósito</h2>
-                        <p><i class="fas fa-home"></i> Levar o avivamento para os lares, fortalecendo a comunhão, a oração e o estudo da Palavra em pequenos grupos.</p>
+                        <p><i class="fas fa-home"></i> Levar o avivamento para os lares, fortalecendo a comunhão, a
+                            oração e o estudo da Palavra em pequenos grupos.</p>
 
                         <h2><i class="fas fa-fire"></i> O Que Fazemos</h2>
                         <ul class="atividades-lista">
@@ -33,12 +62,15 @@
                         </ul>
 
                         <h2><i class="fas fa-calendar-alt"></i> Quando e Onde</h2>
-                        <p>Nossas reuniões acontecem todas as [Dia da Semana] às [Horário] em lares diferentes da nossa igreja. Para saber o endereço da reunião desta semana, entre em contato conosco!</p>
+                        <p>Nossas reuniões acontecem todas as [Dia da Semana] às [Horário] em lares diferentes da nossa
+                            igreja. Para saber o endereço da reunião desta semana, entre em contato conosco!</p>
 
                         <h2><i class="fas fa-envelope"></i> Como Participar</h2>
-                        <p>Envie um e-mail para <a href="mailto:[E-mail do Ministério]">[E-mail do Ministério]</a> ou fale com [Nome do Responsável] pelo telefone [Telefone do Responsável].</p>
+                        <p>Envie um e-mail para <a href="mailto:[E-mail do Ministério]">[E-mail do Ministério]</a> ou
+                            fale com [Nome do Responsável] pelo telefone [Telefone do Responsável].</p>
 
-                        <a href="#" class="btn-participe">Participe do Aviva Viana <i class="fas fa-arrow-right"></i></a>
+                        <a href="#" class="btn-participe">Participe do Aviva Viana <i
+                                class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -46,18 +78,24 @@
                     <h2>O Impacto do Aviva Viana</h2>
                     <div class="depoimentos-slider">
                         <div class="depoimento">
-                            <p>"O Aviva Viana transformou a atmosfera da minha casa e fortaleceu minha fé." - [Nome do Membro 1]</p>
+                            <p>"O Aviva Viana transformou a atmosfera da minha casa e fortaleceu minha fé." - [Nome do
+                                Membro 1]</p>
                         </div>
                         <div class="depoimento">
-                            <p>"Encontrei um apoio incrível e aprendi muito com os irmãos do grupo." - [Nome do Membro 2]</p>
+                            <p>"Encontrei um apoio incrível e aprendi muito com os irmãos do grupo." - [Nome do Membro
+                                2]</p>
                         </div>
                         <div class="depoimento">
-                            <p>"O Aviva Viana me ajudou a crescer espiritualmente e a me sentir mais conectado com a igreja." - [Nome do Membro 3]</p>
+                            <p>"O Aviva Viana me ajudou a crescer espiritualmente e a me sentir mais conectado com a
+                                igreja." - [Nome do Membro 3]</p>
                         </div>
                     </div>
                 </section>
             </section>
         </main>
+
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
 
         <footer id="footer"></footer>
     </div>
@@ -78,6 +116,19 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
-    <script src="../../js/script.js"></script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('/src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/global.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+    <script src="/js/animacoes.js" type="module"></script>
 </body>
+
 </html>

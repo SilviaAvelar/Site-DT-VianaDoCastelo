@@ -1,0 +1,73 @@
+/* ========================= Ministério Infantil ========================= */
+.ministerio-infantil {
+    padding: 50px 0;
+    font-family: var(--main-font);
+    color: var(--light-text-color);
+}
+
+.ministerio-infantil h1 {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ministerio-infantil-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    background-color: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.ministerio-infantil-texto {
+    flex: 2 1 400px;
+}
+
+.ministerio-infantil-texto h2 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.ministerio-infantil-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+    .ministerio-infantil-content {
+        flex-direction: column;
+    }
+}
+
+/* Estilos de Cores para o Ministério Infantil (Opção 1 - Arco-Íris) */
+.ministerio-infantil {
+    --primary-color: #F44336;   /* Vermelho */
+    --secondary-color: #FFEB3B;  /* Amarelo */
+    --accent-color: #4CAF50;    /* Verde */
+    --light-bg-color: #FFCDD2;  /* Rosa claro */
+}
+
+.ministerio-infantil h1 {
+    color: var(--primary-color);
+}
+
+.ministerio-infantil-texto h2 {
+    color: var(--primary-color);
+}
+
+.ministerio-infantil-texto h2 i {
+    margin-right: 10px;
+    color: var(--accent-color);
+}
+
+.ministerio-infantil-content {
+    background-color: var(--light-bg-color); /* Rosa claro (ou Amarelo Claro ou Rosa bem claro) */
+}
