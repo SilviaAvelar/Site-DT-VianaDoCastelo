@@ -76,27 +76,28 @@
                 mundo.</p>
         </section>
 
-        <!-- Incluir botões flutuantes -->
-        <div id="social-float-container"></div>
+    <!-- Incluir botões flutuantes -->
+    <div id="social-float-container"></div>
     </div> <!-- Fechamento da div .site-content -->
 
     <!-- Footer -->
-    <footer id="footer-container"></footer>
-
-    <script>
-        fetch('/src/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header').innerHTML = data;
-            });
-    </script>
+    <footer id="footer"></footer>
 
     <!-- Carrega o Footer -->
     <script>
         fetch('/src/footer.html')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('main-footer').innerHTML = data;
+                document.getElementById('footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Carrega o Header -->
+    <script>
+        fetch('/src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
             });
     </script>
 

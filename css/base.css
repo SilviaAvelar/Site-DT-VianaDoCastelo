@@ -29,6 +29,9 @@ body {
     margin: 0;
     background-color: var(--light-bg-color);
     color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Flexbox para layout */
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
 }
 
 .container {
@@ -44,7 +47,9 @@ a {
 
 /* Flexbox para o layout principal */
 html, body {
-    height: 100%; /* Garante que o html e o body ocupem toda a altura da janela */
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -57,6 +62,6 @@ body {
     flex: 1 0 auto; /* Expande para preencher o espaço restante */
 }
 
-#main-footer {
+.footer {
     flex-shrink: 0; /* Impede que o footer encolha */
 }

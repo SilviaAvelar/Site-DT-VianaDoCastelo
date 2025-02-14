@@ -24,7 +24,7 @@ function controlarOpacidadeDoMenu() {
     const currentPage = window.location.pathname;
 
     if (nav) {
-        if (currentPage === 'index.html' || currentPage === '/') {
+        if (currentPage === '/src/index.html' || currentPage === '/') {
             nav.classList.remove('nav-opaque');
             nav.style.backgroundColor = 'rgba(121, 215, 190, 0.1)';
         } else {
@@ -63,3 +63,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
