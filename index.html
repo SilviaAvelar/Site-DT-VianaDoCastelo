@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diante do Trono - Viana do Castelo</title>
+
+    <!-- Links CSS -->
+    <link rel="stylesheet" href="/css/adolescentes.css">
+    <link rel="stylesheet" href="/css/apoio-culto.css">
+    <link rel="stylesheet" href="/css/aviva-viana.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/cafe-com-fe.css">
+    <link rel="stylesheet" href="/css/casais.css">
+    <link rel="stylesheet" href="/css/comunicacao.css">
+    <link rel="stylesheet" href="/css/contato.css">
+    <link rel="stylesheet" href="/css/eventos.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/galeria.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/jovens.css">
+    <link rel="stylesheet" href="/css/louvor.css">
+    <link rel="stylesheet" href="/css/ministerios.css">
+    <link rel="stylesheet" href="/css/ministerio-infantil.css">
+    <link rel="stylesheet" href="/css/ministerio-louvor.css">
+    <link rel="stylesheet" href="/css/missao.css">
+    <link rel="stylesheet" href="/css/mulheres.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/oracao.css">
+    <link rel="stylesheet" href="/css/programacao.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="/css/sobre.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div id="root">
+        <div class="site-content">
+            <!-- Header -->
+            <header id="header"></header>
+
+            <!-- Conteúdo Principal -->
+            <section id="parallax-container">
+                <div class="parallax-bg"></div>
+                <div class="parallax-content">
+                    <div class="text-container">
+                        <img src="/assets/logo4.png" alt="Logo Diante do Trono Viana" class="logo-imagem">
+                        <h1>Igreja Diante do Trono - Viana do Castelo</h1>
+                    </div>
+                    <h2>Somos uma Igreja Viva.</h2>
+                </div>
+            </section>
+
+            <section id="sobre-nos">
+                <h2>Sobre Nós</h2>
+                <p>A Igreja Diante do Trono em Viana do Castelo, Portugal, é um local de fé, adoração e comunhão. Com um
+                    coração voltado para Deus e a missão de impactar a comunidade local e além, a igreja busca ser um
+                    reflexo do amor e da graça de Cristo, promovendo um ambiente acolhedor e cheio de vida para todos.
+                    Através de cultos vibrantes, eventos especiais e iniciativas de voluntariado, a igreja se dedica a
+                    cultivar um relacionamento profundo com Deus e a servir à sua cidade e região.</p>
+
+            <p>A igreja também é um ponto de encontro para aqueles que desejam crescer espiritualmente, seja por meio de
+                estudos bíblicos, orações em grupo ou programas de apoio social. Com uma visão clara de ser uma igreja
+                relevante, que atenda às necessidades da comunidade, a Igreja Diante do Trono busca sempre ser uma voz
+                ativa de transformação e esperança.</p>
+
+            <p>Em um cenário moderno e dinâmico, a igreja se preocupa com as boas práticas de acessibilidade,
+                proporcionando um ambiente inclusivo para todos os membros, sem exceção. Através de sua forte presença
+                nas redes sociais e outras plataformas digitais, a Igreja Diante do Trono em Viana do Castelo também tem
+                expandido seu alcance, levando a mensagem do evangelho para muitas pessoas em diferentes partes do
+                mundo.</p>
+        </section>
+
+        <!-- Incluir botões flutuantes -->
+        <div id="social-float-container"></div>
+    </div> <!-- Fechamento da div .site-content -->
+
+    <!-- Footer -->
+    <footer id="footer-container"></footer>
+
+    <script>
+        fetch('/src/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+    </script>
+
+    <!-- Carrega o Footer -->
+    <script>
+        fetch('/src/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('main-footer').innerHTML = data;
+            });
+    </script>
+
+    <!-- Incluir botões flutuantes -->
+    <script>
+        fetch('/src/social-floate.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('social-float-container').innerHTML = data;
+            });
+    </script>
+
+    <script src="/js/global.js" type="module"></script>
+    <script src="/js/header.js" type="module"></script>
+    <script src="/js/animacoes.js" type="module"></script>
+</body>
+
+</html>
